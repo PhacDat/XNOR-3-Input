@@ -1,0 +1,39 @@
+* C:\Users\ad\Desktop\DO_AN_final.asc
+M1 VDD A N001 VDD pch l=130n w=1.6u
+M2 N001 A VSS VSS nch l=130n w=0.8u
+V1 VDD 0 1.8
+V2 VSS 0 0
+M3 N003 N007 out1 VDD pch l=130n w=1.6u
+M5 VDD A N003 VDD pch l=130n w=1.6u
+M6 VDD N001 N004 VDD pch l=130n w=1.6u
+M7 out1 A N009 0 nch l=130n w=0.8u
+M8 out1 N007 N009 0 nch l=130n w=0.8u
+M4 N004 B out1 VDD pch l=130n w=1.6u
+M9 N009 B 0 0 nch l=130n w=0.8u
+M10 N009 N001 0 0 nch l=130n w=0.8u
+M11 VDD B N007 VDD pch l=130n w=1.6u
+M12 N007 B 0 0 nch l=130n w=0.8u
+V§B B 0 PULSE(0 1.8 0 4p 4p 10n 20n)
+V§A A 0 PULSE(0 1.8 0 4p 4p 5n 10n)
+M13 VDD out1 N002 VDD pch l=130n w=1.6u
+M14 N002 out1 VSS VSS nch l=130n w=0.8u
+M15 N005 N008 out2 VDD pch l=130n w=1.6u
+M16 VDD out1 N005 VDD pch l=130n w=1.6u
+M17 VDD N002 N006 VDD pch l=130n w=1.6u
+M18 out2 out1 N010 0 nch l=130n w=0.8u
+M19 out2 N008 N010 0 nch l=130n w=0.8u
+M20 N006 C out2 VDD pch l=130n w=1.6u
+M21 N010 C 0 0 nch l=130n w=0.8u
+M22 N010 N002 0 0 nch l=130n w=0.8u
+M23 VDD C N008 VDD pch l=130n w=1.6u
+M24 N008 C 0 0 nch l=130n w=0.8u
+V§C C 0 PULSE(0 1.8 0 4p 4p 15n 25n)
+M25 VDD out2 Vout VDD pch l=130n w=1.6u
+M26 Vout out2 VSS VSS nch l=130n w=0.8u
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\ad\AppData\Local\LTspice\lib\cmp\standard.mos
+.tran 100n
+.lib "C:\Users\ad\Desktop\New folder\130nm_bulk.lib"
+.backanno
+.end
